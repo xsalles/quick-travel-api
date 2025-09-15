@@ -1,0 +1,8 @@
+services:
+  postgres:
+    container_name: job_vacancies_postgres
+    image: postgres:16.10-alpine
+    environment:
+      - POSTGRES_URL=${POSTGRES_USER}
+    env_file:
+      - .env
