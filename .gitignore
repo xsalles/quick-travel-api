@@ -34,3 +34,4 @@ build/
 
 ### Enviromental credentials ###
 .env
+src/main/resources/application.properties
