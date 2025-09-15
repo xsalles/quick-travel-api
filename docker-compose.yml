@@ -1,8 +1,12 @@
 services:
   postgres:
-    container_name: job_vacancies_postgres
+    container_name: quick_travel_postgres
     image: postgres:16.10-alpine
+    ports:
+      - ${POSTGRES_PORT}
     environment:
-      - POSTGRES_URL=${POSTGRES_USER}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     env_file:
       - .env
