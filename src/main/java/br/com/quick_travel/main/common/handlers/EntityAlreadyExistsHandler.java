@@ -1,13 +1,13 @@
 package br.com.quick_travel.main.common.handlers;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import br.com.quick_travel.main.common.dto.ApiResponseDto;
 import br.com.quick_travel.main.common.exceptions.EntityAlreadyExistsException;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class EntityAlreadyExistsHandler {
     
     @ExceptionHandler(EntityAlreadyExistsException.class)
