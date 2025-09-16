@@ -2,6 +2,7 @@ package br.com.quick_travel.main.modules.Location.model;
 
 import java.util.UUID;
 
+import br.com.quick_travel.main.common.validation.ValidCep;
 import br.com.quick_travel.main.modules.User.model.UserModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,8 +20,8 @@ public class LocationModel {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Pattern(regexp = "\\d{8}", message = "CEP must be exactly 8 digits")
     @NotBlank(message = "CEP cannot be blank")
+    @ValidCep
     private String cep;
 
     @Pattern(regexp = ".{5,100}", message = "Address must be between 5 and 100 characters")
