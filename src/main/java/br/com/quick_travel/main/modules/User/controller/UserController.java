@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.quick_travel.main.common.dto.ApiResponseDto;
+import br.com.quick_travel.main.modules.User.dto.AuthUserDto;
 import br.com.quick_travel.main.modules.User.model.UserModel;
 import br.com.quick_travel.main.modules.User.service.UserService;
 import jakarta.validation.Valid;
@@ -21,5 +22,10 @@ public class UserController {
     @PostMapping("/auth/register")
     public ResponseEntity<ApiResponseDto<String>> registerUser(@Valid @RequestBody UserModel userModel) {
         return userService.registerUser(userModel);
+    }
+
+    @PostMapping("/auth/login")
+    public ResponseEntity<ApiResponseDto<String>> loginUser(@RequestBody AuthUserDto authUserDto) {
+        return userService.loginUser(authUserDto);
     }
 }

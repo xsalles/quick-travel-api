@@ -2,12 +2,14 @@ package br.com.quick_travel.main.common.provider;
 
 import br.com.quick_travel.main.config.jwt.JWTConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
 import java.util.UUID;
 
+@Service
 public class JWTProvider {
     @Autowired
     private JWTConfig  jwtConfig;
