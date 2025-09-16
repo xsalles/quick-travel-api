@@ -36,3 +36,4 @@ public class LocationModel {
     @OneToOne(mappedBy = "location")
     private UserModel user;
 }
+
