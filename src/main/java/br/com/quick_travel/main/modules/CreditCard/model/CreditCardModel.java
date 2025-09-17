@@ -31,7 +31,7 @@ public class CreditCardModel {
     @Column(name = "number_card", unique = true, nullable = false, length = 16)
     private String numberCard;
 
-    @Pattern(regexp = "\\d+", message = "Number must be a positive integer")
+    @Pattern(regexp = "^[A-Za-zÀ-ÖØ-öø-ÿ ]+$", message = "Holder's name must contain only letters and spaces")
     @NotBlank(message = "Holder name cannot be blank")
     private String holderName;
 
@@ -39,4 +39,3 @@ public class CreditCardModel {
     @JoinColumn(name = "user_id", nullable = false)
     private UserModel user;
 }
-
