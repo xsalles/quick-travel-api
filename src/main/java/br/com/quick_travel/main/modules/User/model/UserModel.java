@@ -1,9 +1,11 @@
 package br.com.quick_travel.main.modules.User.model;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.hibernate.validator.constraints.Length;
 
+import br.com.quick_travel.main.modules.CreditCard.model.CreditCardModel;
 import br.com.quick_travel.main.modules.Location.model.LocationModel;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -11,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
@@ -35,4 +38,7 @@ public class UserModel {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     private LocationModel location;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<CreditCardModel> creditCards;
 }

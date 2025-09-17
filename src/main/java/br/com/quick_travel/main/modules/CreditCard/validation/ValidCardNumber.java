@@ -1,4 +1,4 @@
-package br.com.quick_travel.main.common.validation;
+package br.com.quick_travel.main.modules.CreditCard.validation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -10,11 +10,11 @@ import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
 @Documented
-@Constraint(validatedBy = CepValidation.class)
+@Constraint(validatedBy = CardNumberValidation.class)
 @Target({ ElementType.FIELD, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidCep {
-    String message() default "Invalid CEP format. It should be '12345-678' or '12345678'.";
+public @interface ValidCardNumber {
+    String message() default "Invalid card number format.";
 
     Class<?>[] groups() default {};
 

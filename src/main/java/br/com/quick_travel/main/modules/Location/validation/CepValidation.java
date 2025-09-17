@@ -1,4 +1,4 @@
-package br.com.quick_travel.main.common.validation;
+package br.com.quick_travel.main.modules.Location.validation;
 
 import java.util.Map;
 

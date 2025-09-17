@@ -2,7 +2,7 @@ package br.com.quick_travel.main.modules.Location.model;
 
 import java.util.UUID;
 
-import br.com.quick_travel.main.common.validation.ValidCep;
+import br.com.quick_travel.main.modules.Location.validation.ValidCep;
 import br.com.quick_travel.main.modules.User.model.UserModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
