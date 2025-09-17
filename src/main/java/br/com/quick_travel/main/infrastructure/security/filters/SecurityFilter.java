@@ -36,6 +36,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 
             if (subjectToken.isEmpty()) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                return;
             }
 
             request.setAttribute("user_id", subjectToken);
@@ -44,6 +45,8 @@ public class SecurityFilter extends OncePerRequestFilter {
                     Collections.emptyList());
 
             SecurityContextHolder.getContext().setAuthentication(auth);
+
+            System.out.println("Authentication set for user: " + subjectToken);
         }
 
         filterChain.doFilter(request, response);
