@@ -8,6 +8,8 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.UUID;
 
 @Service
@@ -19,6 +21,7 @@ public class JWTProvider {
         Algorithm algorithm = Algorithm.HMAC256(jwtConfig.getSecret());
 
         return JWT.create()
+                .withExpiresAt(Instant.now().plus(Duration.ofHours(24)))
                 .withIssuer("quick-travel")
                 .withSubject(id.toString())
                 .withClaim("email", email)
