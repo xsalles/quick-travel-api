@@ -22,7 +22,7 @@ public class EntityPatternHandler {
             this.messageSource = message;
       }
 
-      @ExceptionHandler(Exception.class)
+      @ExceptionHandler(MethodArgumentNotValidException.class)
       public ResponseEntity<List<ErrorMessageDto>> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
             List<ErrorMessageDto> dto = new ArrayList<>();
 
